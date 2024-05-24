@@ -7,12 +7,27 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      "2xl": { max: "1536px" },
+      xl: { max: "1280px" },
+      lg: { max: "1024px" },
+      md: { max: "768px" },
+      sm: { max: "640px" },
+      xs: { max: "450px" },
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      gridTemplateColumns: {
+        14: "repeat(16, minmax(0, 1fr))",
       },
+      rotate: {
+        135: "135deg",
+      },
+      spacing: {
+        "content-limit": "var(--padding-screen)",
+      },
+      colors: {
+        dark: "#121212",
+      }
     },
   },
   plugins: [],
