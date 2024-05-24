@@ -83,7 +83,6 @@ export const getTeamSeasonPlayers = (teamId: number, season: string): Promise<an
   
   return fetch(URL)
     .then((response) => {
-      console.log(response);
       if (response.ok) {
         return response.json();
       }

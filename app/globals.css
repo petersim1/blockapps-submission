@@ -8,11 +8,6 @@ body.modal-show {
 
 @layer base {
   :root {
-    --bg: radial-gradient(111.14% 117.16% at 16.61% 0%, #001062 0%, #000626 100%);
-    --card-bg: rgb(13, 17, 28);
-    --text-light: linear-gradient(180deg, #f4f5f7 6.58%, #c8d0e7 81.58%);
-    --text-dark: linear-gradient(180deg, #001062 0%, #000626 100%);
-    --btn-dark: #00041b;
     --padding-screen: max(50px, calc((100vw - 1440px + 50px) / 2));
   }
 
@@ -114,12 +109,6 @@ body.modal-show {
 }
 
 @layer components {
-  .nav-fixed-bottom {
-    @apply fixed bottom-0 left-0 w-full bg-dark z-[999] rounded-t-lg justify-between px-5 shadow shadow-gray-200/20
-  }
-}
-
-@layer components {
   .leaderboard-element {
     @apply flex flex-row list-none m-0 p-2
   }
@@ -167,140 +156,5 @@ body.modal-show {
   }
   .grid-child:nth-child(6) {
     grid-column: 14 / 16;
-  }
-}
-
-@layer components {
-  .avatar {
-    height: var(--size-desktop);
-    width: var(--size-desktop);
-    min-height: var(--size-desktop);
-    min-width: var(--size-desktop);
-    @apply rounded-full transition-all bg-no-repeat bg-cover bg-center
-  }
-
-  @media screen(md) {
-    .avatar {
-      height: var(--size-mobile);
-      width: var(--size-mobile);
-      min-height: var(--size-mobile);
-      min-width: var(--size-mobile);
-    }
-  }
-}
-
-
-@layer components {
-  .btn-gradient {
-    @apply flex flex-row items-center justify-center outline-none border-none rounded-md py-2 px-3 text-dark text-sm gap-1 font-semibold transition-opacity
-  }
-  .btn-gradient:not(:disabled):hover,
-  .btn-gradient:not(:disabled):focus-visible,
-  .btn-gradient:not(:disabled):active,
-  a:not(.disabled):focus-visible .btn-gradient,
-  a:not(.disabled):active .btn-gradient {
-    @apply opacity-hover
-  }
-
-  .btn-outline {
-    @apply flex flex-row items-center justify-center rounded-lg h-9 px-3 text-sm gap-1 bg-dark transition-colors outline-offset-0 text-zinc-400 outline-none border border-zinc-400 min-w-16
-  }
-  .btn-outline:not(:disabled):hover,
-  .btn-outline:not(:disabled):focus-visible,
-  .btn-outline:not(:disabled):active,
-  a:not(.disabled):focus-visible .btn-outline,
-  a:not(.disabled):active .btn-outline {
-    @apply bg-slate-800/60 text-white shadow-md shadow-zinc-400/20
-  }
-
-  .btn-gradient:disabled,
-  .btn-outline:disabled,
-  a.btn-gradient.disabled,
-  a.btn-outline.disabled {
-    @apply opacity-disable
-  }
-}
-
-@layer components {
-  label.toggle {
-    @apply relative inline-block w-[35px] h-[20px]
-  }
-
-  input.toggle {
-    @apply hidden appearance-none
-  }
-
-  span.toggle {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
-    background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
-
-  span.toggle:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    border-radius: 100%;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
-
-  input.toggle:disabled + span.toggle {
-    cursor: default;
-    opacity: 0.75;
-  }
-
-  input.toggle:checked + span.toggle {
-    background-color: #4cd964;
-  }
-
-  input.toggle:focus + span.toggle {
-    box-shadow: 0 0 1px #4cd964;
-  }
-
-  input.toggle:checked + span.toggle:before {
-    -webkit-transform: translateX(15px);
-    -ms-transform: translateX(15px);
-    transform: translateX(15px);
-  }
-}
-
-
-@layer utilities {
-  .conic {
-    aspect-ratio: 1 / 1;
-    background: conic-gradient(theme("colors.white"), theme("colors.transparent"));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    @apply aspect-square z-0 p-[3px] rounded-full
-  }
-}
-
-@layer utilities {
-  .focus-border {
-    @apply border border-transparent outline-none transition-all focus-visible:border-gray-200/20 focus-visible:outline-none
-  }
-
-  .focus-input {
-    @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-300
-  }
-}
-
-@layer utilities {
-  .after-underline {
-    @apply after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:bg-current
   }
 }
